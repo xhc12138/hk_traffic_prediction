@@ -1,0 +1,8 @@
+master: "spark://<YOUR-SPARK-MASTER-IP>:7077"
+model_path: "data/models/best_model.pth"
+data_path: "data/processed/train_data.parquet"
+api_port: 8000
+api_host: "0.0.0.0"
+realtime_url: "https://resource.data.one.gov.hk/td/traffic-detectors/irnAvgSpeed-all.xml"
+prediction_interval_minutes: 5
+historical_data_dir: "data/historical"
