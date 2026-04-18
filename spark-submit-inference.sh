@@ -13,8 +13,17 @@ echo "Submitting Spark Inference Job"
 echo "Environment: $ENV"
 echo "Master URL: $MASTER"
 
+# Submit road traffic ETL
 spark-submit \
     --master "$MASTER" \
     --conf spark.executor.memory=2g \
     --conf spark.driver.memory=2g \
     src/inference/spark_etl.py
+
+# Submit MTR ETL (Placeholder)
+echo "Submitting Spark job for MTR Next Train Prediction (Env: $ENV)..."
+spark-submit \
+    --master "$MASTER" \
+    --conf spark.executor.memory=2g \
+    --conf spark.driver.memory=2g \
+    src/mtr/inference/spark_etl_mtr.py

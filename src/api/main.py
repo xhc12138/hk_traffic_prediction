@@ -18,10 +18,70 @@ from src.utils.config import config
 from src.inference.spark_etl import create_spark_session, fetch_realtime_xml, run_spark_etl
 from src.inference.predictor import predictor
 
+from src.mtr.inference.spark_etl_mtr import run_spark_etl_mtr
+from src.mtr.inference.predictor_mtr import mtr_predictor
+
+import glob
+
 # Global cache for latest predictions
 latest_predictions: Dict[int, float] = {}
 last_update_timestamp: str = ""
 spark_session = None
+
+# MTR Global cache
+latest_mtr_risk: Dict[str, float] = {}
+latest_mtr_propagation: Dict[str, dict] = {}
+mtr_last_update_timestamp: str = ""
+
+def update_mtr_predictions():
+    global latest_mtr_risk, latest_mtr_propagation, mtr_last_update_timestamp, spark_session
+    use_mock = os.environ.get("MTR_USE_MOCK", "false").lower() == "true"
+    
+    import pandas as pd
+    
+    if use_mock:
+        print("[MTR] Fetching MTR data and predicting in MOCK mode...")
+        # Generate mock dataframe based on config
+        lines_stations = config.get("mtr_lines_stations", {})
+        mock_data = []
+        for line, stations in lines_stations.items():
+            for sta in stations:
+                mock_data.append({"line": line, "sta": sta})
+        
+        if not mock_data:
+            return
+            
+        df = pd.DataFrame(mock_data)
+    else:
+        print("[MTR] Fetching realtime MTR data in REAL mode...")
+        raw_dir = os.path.join(project_root, config.get("mtr_raw_data_dir", "data/historical/mtr_nexttrain/raw"))
+        json_files = glob.glob(os.path.join(raw_dir, "*.json"))
+        
+        if not json_files:
+            print("[MTR] No raw data found. Please run data_logger.py first.")
+            return
+            
+        latest_file = max(json_files, key=os.path.getctime)
+        with open(latest_file, 'r', encoding='utf-8') as f:
+            json_content = f.read()
+            
+        if spark_session is None:
+            spark_session = create_spark_session()
+            
+        df = run_spark_etl_mtr(spark_session, json_content)
+        
+        if df.empty:
+            print("[MTR] No valid data found in the latest JSON.")
+            return
+
+    # Primary Task
+    latest_mtr_risk = mtr_predictor.predict_risk(df, mock=use_mock)
+    
+    # Advanced Task
+    latest_mtr_propagation = mtr_predictor.predict_propagation(df, mock=use_mock)
+    
+    mtr_last_update_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[MTR] Updated predictions for {len(df)} stations at {mtr_last_update_timestamp}.")
 
 def update_predictions():
     global latest_predictions, spark_session, last_update_timestamp
@@ -52,10 +112,12 @@ async def lifespan(app: FastAPI):
     scheduler = BackgroundScheduler()
     interval = config.get('prediction_interval_minutes', 5)
     scheduler.add_job(update_predictions, 'interval', minutes=interval)
+    scheduler.add_job(update_mtr_predictions, 'interval', seconds=15)
     scheduler.start()
     
     # Run once immediately
     update_predictions()
+    update_mtr_predictions()
     yield
     
     # Shutdown
@@ -89,6 +151,44 @@ def get_all_predictions():
         "count": len(latest_predictions),
         "last_update": last_update_timestamp,
         "predictions": {k: round(v, 2) for k, v in latest_predictions.items()}
+    }
+
+# --- MTR Endpoints ---
+
+@app.get("/mtr/predictions")
+def get_mtr_risk_predictions(line: Optional[str] = None, sta: Optional[str] = None):
+    """Primary Task: Delay Risk Probability"""
+    if line and sta:
+        key = f"{line}-{sta}"
+        pred = latest_mtr_risk.get(key)
+        if pred is None:
+            return {"line": line, "sta": sta, "delay_risk_probability": None, "status": "Not found"}
+        return {"line": line, "sta": sta, "delay_risk_probability": pred, "status": "Success"}
+        
+    return {
+        "count": len(latest_mtr_risk),
+        "last_update": mtr_last_update_timestamp,
+        "predictions": latest_mtr_risk
+    }
+
+@app.get("/mtr/delay-prediction")
+def get_mtr_propagation_predictions(line: Optional[str] = None, sta: Optional[str] = None):
+    """Advanced Task: Delay Duration + Affected Trains"""
+    if line and sta:
+        key = f"{line}-{sta}"
+        pred = latest_mtr_propagation.get(key)
+        if pred is None:
+            return {"line": line, "sta": sta, "data": None, "status": "Not found"}
+        
+        result = {"line": line, "sta": sta}
+        result.update(pred)
+        result["status"] = "Success"
+        return result
+        
+    return {
+        "count": len(latest_mtr_propagation),
+        "last_update": mtr_last_update_timestamp,
+        "predictions": latest_mtr_propagation
     }
 
 @app.get("/map_config")

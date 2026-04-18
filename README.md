@@ -1,13 +1,13 @@
-# 香港主要幹道交通阻塞時間預測模組 (Congestion Duration Prediction Module)
+# 香港交通预测与港铁延误预警系统
 
-這是一個基於 Spark 與 PyTorch 的實時交通擁堵預測後端服務，專為提供 Dashboard JSON 接口設計。
+这是一个基于 Spark 与 PyTorch 的实时交通拥堵与港铁延误预测后端服务，专为提供 Dashboard JSON 接口设计。
 
-## 目錄結構
-- `data/`：數據目錄（包含歷史和處理後的資料）。
-- `src/`：原始碼。
-- `config/`：本地與雲端配置切換。
-- `run_local.sh`：本地一鍵啟動腳本。
-- `spark-submit-inference.sh`：Spark 提交測試腳本。
+## 目录结构
+- `data/`：数据目录（包含历史和处理后的资料）。
+- `src/`：源码（分为 `inference/` 道路部分与 `mtr/` 港铁部分）。
+- `config/`：本地与云端配置切换。
+- `run_local.sh`：本地一键启动脚本（同时启动 API 与 MTR Logger）。
+- `spark-submit-inference.sh`：Spark 提交测试脚本。
 
 ## 快速開始 (Local 環境)
 
@@ -54,9 +54,9 @@ bash run_local.sh
 
 ---
 
-接口提供兩個端點 (預設運行在 `http://127.0.0.1:8000`)：
+接口提供两个端点 (预设运行在 `http://127.0.0.1:8000`)：
 
-### 1. 批量獲取所有預測
+### 1. 批量获取所有路网预测
 **GET** `/predictions`
 ```json
 {
@@ -67,14 +67,28 @@ bash run_local.sh
   }
 }
 ```
-- **建議**：每 5 分鐘輪詢一次此接口，將預測結果顯示在全域地圖。
 
-### 2. 單一路段查詢
-**GET** `/predict?segment_id=105500`
+### 2. MTR 延误概率预测 (初级任务)
+**GET** `/mtr/predictions`
 ```json
 {
-  "segment_id": 105500,
-  "predicted_congestion_minutes": 12.5,
+  "count": 100,
+  "predictions": {
+    "TCL-OLY": 0.23
+  }
+}
+```
+
+### 3. MTR 延误事件高级预测 (高级任务)
+**GET** `/mtr/delay-prediction?line=TCL&sta=OLY`
+```json
+{
+  "line": "TCL",
+  "sta": "OLY",
+  "delay_risk_probability": 0.85,
+  "delay_duration_minutes": 14.8,
+  "affected_trains_count": 3,
+  "color_code": "red",
   "status": "Success"
 }
 ```

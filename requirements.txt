@@ -13,3 +13,4 @@ geopandas
 fiona
 pyogrio
 shapely
+aiohttp
