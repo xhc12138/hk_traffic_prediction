@@ -9,3 +9,7 @@ fastparquet
 pyyaml
 apscheduler
 requests
+geopandas
+fiona
+pyogrio
+shapely

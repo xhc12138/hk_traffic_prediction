@@ -14,6 +14,9 @@ from src.utils.config import config
 from src.utils.helpers import extract_time_features
 
 def create_spark_session():
+    os.environ['PYSPARK_PYTHON'] = sys.executable
+    os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+    
     master = config.get('master', 'local[*]')
     spark = SparkSession.builder \
         .appName("TrafficCongestionInference") \

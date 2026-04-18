@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Traffic Prediction Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>HK Traffic Predictor</h2>
+        <div class="status-panel">
+            <p>Last Update: <span id="last-update">Loading...</span></p>
+            <button id="refresh-btn">Refresh Now</button>
+        </div>
+        
+        <div class="legend">
+            <h3>Congestion Prediction</h3>
+            <div class="legend-item"><span class="color-box" style="background-color: #28a745;"></span> Clear (0 min)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #ffc107;"></span> Slow (< 5 mins)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #fd7e14;"></span> Congested (5-20 mins)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #dc3545;"></span> Heavy (> 20 mins)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #6c757d;"></span> No Data</div>
+        </div>
+
+        <div class="details-panel" id="details-panel">
+            <h3>Segment Details</h3>
+            <p class="placeholder-text">Click a road segment on the map to see details.</p>
+            <div id="segment-info" style="display: none;">
+                <p><strong>Segment ID:</strong> <span id="seg-id"></span></p>
+                <p><strong>Street:</strong> <span id="seg-street"></span></p>
+                <p><strong>Predicted Congestion:</strong> <span id="seg-pred"></span> mins</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/frontend/map.js"></script>
+</body>
+</html>
