@@ -39,14 +39,27 @@ def run_spark_etl_mtr(spark: SparkSession, json_content: str) -> pd.DataFrame:
                 up_trains = sta_data["data"].get(f"{line}-{sta}", {}).get("UP", [])
                 down_trains = sta_data["data"].get(f"{line}-{sta}", {}).get("DOWN", [])
                 
-                ttnt_up_1 = int(up_trains[0]["ttnt"]) if up_trains else -1
-                ttnt_down_1 = int(down_trains[0]["ttnt"]) if down_trains else -1
+                up_ttnt_1 = float(up_trains[0]["ttnt"]) if up_trains else 0.0
+                down_ttnt_1 = float(down_trains[0]["ttnt"]) if down_trains else 0.0
+                
+                try:
+                    dt = pd.to_datetime(collected_at, format="%Y%m%d_%H%M%S")
+                    hour = dt.hour
+                    day_of_week = dt.dayofweek
+                    is_weekend = 1 if day_of_week in [5, 6] else 0
+                    is_peak = 1 if ((hour >= 7) and (hour <= 9)) or ((hour >= 17) and (hour <= 19)) else 0
+                except:
+                    hour, day_of_week, is_weekend, is_peak = 0, 0, 0, 0
                 
                 records.append({
                     "line": line,
                     "sta": sta,
-                    "ttnt_up_1": ttnt_up_1,
-                    "ttnt_down_1": ttnt_down_1,
+                    "up_ttnt_1": up_ttnt_1,
+                    "down_ttnt_1": down_ttnt_1,
+                    "hour": hour,
+                    "day_of_week": day_of_week,
+                    "is_weekend": is_weekend,
+                    "is_peak": is_peak,
                     "isdelay": sta_data.get("isdelay", "N"),
                     "timestamp": collected_at
                 })

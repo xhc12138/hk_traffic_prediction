@@ -206,6 +206,13 @@ def get_road_network():
         return FileResponse(geojson_path, media_type="application/geo+json")
     return JSONResponse(status_code=404, content={"message": "Road network GeoJSON not found."})
 
+@app.get("/mtr_network")
+def get_mtr_network():
+    geojson_path = os.path.join(project_root, "data/road_network/processed/mtr_network.geojson")
+    if os.path.exists(geojson_path):
+        return FileResponse(geojson_path, media_type="application/geo+json")
+    return JSONResponse(status_code=404, content={"message": "MTR network GeoJSON not found."})
+
 # Mount frontend static files
 frontend_dir = os.path.join(project_root, "frontend")
 os.makedirs(frontend_dir, exist_ok=True)

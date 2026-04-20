@@ -1,98 +1,129 @@
 # 香港交通预测与港铁延误预警系统
 
-这是一个基于 Spark 与 PyTorch 的实时交通拥堵与港铁延误预测后端服务，专为提供 Dashboard JSON 接口设计。
+本项目是一个基于 Spark RDD (大数据实时提取) 与 PyTorch (深度学习推理) 构建的**香港交通拥堵预测与 MTR 延误预警后端服务**，专为提供高性能、高并发的 RESTful JSON 接口给前端 Web/Dashboard 团队对接而设计。
 
-## 目录结构
-- `data/`：数据目录（包含历史和处理后的资料）。
-- `src/`：源码（分为 `inference/` 道路部分与 `mtr/` 港铁部分）。
-- `config/`：本地与云端配置切换。
-- `run_local.sh`：本地一键启动脚本（同时启动 API 与 MTR Logger）。
-- `spark-submit-inference.sh`：Spark 提交测试脚本。
+本项目由两个核心子模块组成：
 
-## 快速開始 (Local 環境)
+1. **Road Traffic Prediction (道路交通拥堵预测)**
+2. **MTR Delay Prediction (港铁延误风险与影响传播预测)**
 
-### 1. 準備數據
-確保 `data/historical/irnAvgSpeed-all.xml` 已存在。
+***
 
-### 2. 數據清洗與特徵工程
+## 📚 项目技术文档索引
+
+为了让协作者更好地理解系统架构，本项目附带了详尽的设计文档：
+
+- [项目文件架构与各文件作用详解 (project\_structure.md)](project_structure.md)
+- [道路交通预测功能详解 (road\_traffic\_prediction.md)](road_traffic_prediction.md)
+- [港铁延误预测功能详解 (mtr\_delay\_prediction.md)](mtr_delay_prediction.md)
+- [云端迁移与集群部署指导文档 (cloud\_migration\_guide.md)](cloud_migration_guide.md)
+- 项目综合介绍文档（ppt和报告的大纲）project\_presentation\_guide.md
+
+***
+
+## 🚀 快速启动指南 (面向新协作者与部署者)
+
+本指南针对**只需运行后端服务并提供 API**的协作者。你不需要执行漫长的模型训练，只需配置好基础环境并拉起服务即可。
+
+### 1. 环境配置
+
+本项目依赖于 Python 3.10、Java 17 (PySpark 必需) 以及支持 CUDA 的 PyTorch。
+推荐使用 Conda 进行环境隔离：
+
 ```bash
+# 1. 创建并激活 Conda 虚拟环境
+conda create -y -n hk_traffic python=3.10
 conda activate hk_traffic
-python src/data_preparation.py
-```
-此步驟會產生 `data/processed/train_data.parquet`。
 
-### 3. 模型訓練 (PyTorch)
-完全不使用 Spark，僅用 PyTorch (GPU 加速)。
+# 2. 安装 Java 17 (Linux 环境，供 PySpark 运行)
+conda install -y -c conda-forge openjdk=17
+
+# 3. 安装 Python 核心依赖与 PyTorch (CUDA 12.1 稳定版)
+pip install -r requirements.txt
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
+
+*(注：系统内置了极强的防宕机设计。如果你的机器没有 GPU，或者 GPU 驱动版本不匹配，代码会自动捕获异常并平滑降级至纯 CPU 推理模式，无需担心运行崩溃。)*
+
+### 2. 启动全局 API 与地图服务
+
+在项目根目录下执行提供的一键启动脚本。
+默认情况下，服务会在后台加载已训练好的 `data/models/` 权重，并通过 APScheduler 每隔一段时间（道路5分钟，港铁15秒）自动从政府 Open Data 接口拉取真实数据、送入 Spark 管道并更新缓存。
+
 ```bash
-python src/train.py
+# --real 参数表示加载真实的 PyTorch 模型，而不是返回随机 Mock 数据
+bash run_local.sh --real
 ```
-訓練好的模型會保存在 `data/models/best_model.pth`。
 
-### 4. 啟動 FastAPI 與 Spark Inference
+**启动成功的标志：**
+你会看到终端打印出模型加载信息、硬件识别信息，并在最后显示：
+
+```text
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+```
+
+此时，你的后端服务已在本地 `8000` 端口就绪！
+
+***
+
+## 🗺️ Web 前端双系统 Dashboard (地图监控)
+
+如果你是负责前端对接或系统验收的组员，本项目已经内置了一个强大的可视化测试页面：
+
+- **打开浏览器访问**：`http://127.0.0.1:8000/map`
+- **双系统无缝切换**：点击页面右上角的 `Road Traffic System` 和 `MTR Delay System` 按钮，可以在公路拥堵监控和港铁延误预警两套大屏之间自由切换。
+- **实时预警动画**：
+  - **道路交通**：所有干道会根据拥堵程度渲染为绿/黄/橙/红色，并支持点击查询。
+  - **港铁预警**：悬停 (Hover) 站点即可查看下一班车的等候时间；当地铁发生延误时（由后端高级任务预测判定），地图上的站点会**闪烁红光**，同时左侧下方的“事件面板”会列出详细的受波及情况（例如：*影响3班列车，预计延误15分钟*），点击列表更可自动缩放定位到该事故车站。
+
+***
+
+## 🧪 自动化接口测试
+
+为了确认你的后端服务启动无误并且所有路由均能正常响应，你可以运行项目中提供的自动化测试脚本：
+
 ```bash
-bash run_local.sh
-```
-此腳本會啟動後端服務，並使用 `APScheduler` 每 5 分鐘自動執行 Spark ETL 並更新預測結果。
-
-## Dashboard 對接說明
-
-### 實時交通可視化交互地圖使用說明
-我們現在提供了一個開箱即用的互動式地圖，直接將預測結果可視化在地圖上！
-
-**訪問路徑：**
-啟動服務後，直接在瀏覽器打開：`http://127.0.0.1:8000/map`
-
-**功能特點：**
-- **直觀顏色編碼**：綠色（暢通）、黃色（預計緩慢）、橙色（預計擁堵）、紅色（嚴重擁堵）。
-- **實時更新**：地圖會每 30 秒自動向後端拉取最新的預測數據，並動態更新路段顏色。
-- **互動詳情**：點擊任何高亮路段，即可在側邊欄看到該路段的具體街道名稱和預計擁堵時間。
-- **配置驅動**：地圖的中心點、顏色閾值和數據來源都可以通過 `config/local.yaml` 和 `config/cloud.yaml` 輕鬆修改，無需更改前端代碼。
-
-**與 Dashboard 組員對接方式：**
-1. **Iframe 嵌入**：可以直接在 Dashboard 應用中使用 `<iframe src="http://<API_IP>:8000/map"></iframe>` 嵌入整個地圖。
-2. **靜態資源遷移**：只需將 `frontend/` 資料夾複製到您的前端專案中，並修改 `map.js` 中的 API Endpoint 即可。
-
----
-
-接口提供两个端点 (预设运行在 `http://127.0.0.1:8000`)：
-
-### 1. 批量获取所有路网预测
-**GET** `/predictions`
-```json
-{
-  "count": 250,
-  "predictions": {
-    "105500": 12.5,
-    "105543": 0.0
-  }
-}
+# 在另一个终端窗口运行
+python test_api.py
 ```
 
-### 2. MTR 延误概率预测 (初级任务)
-**GET** `/mtr/predictions`
-```json
-{
-  "count": 100,
-  "predictions": {
-    "TCL-OLY": 0.23
-  }
-}
-```
+该脚本将模拟前端发起 HTTP GET 请求，测试 `/predictions`、`/mtr/delay-prediction` 等核心接口，并打印出每个接口的**状态码、响应时间以及 JSON 预览**。如果所有测试均返回 `✅ Status Code: 200 OK`，则说明你的服务部署完美成功。
 
-### 3. MTR 延误事件高级预测 (高级任务)
-**GET** `/mtr/delay-prediction?line=TCL&sta=OLY`
-```json
-{
-  "line": "TCL",
-  "sta": "OLY",
-  "delay_risk_probability": 0.85,
-  "delay_duration_minutes": 14.8,
-  "affected_trains_count": 3,
-  "color_code": "red",
-  "status": "Success"
-}
-```
+***
 
-## 雲端遷移
-整個專案採用 config-driven。只需修改 `config/cloud.yaml` 中的 `master` URL 即可從本地切換到雲端 Spark 集群。
-在部署時將 `ENV` 變數設為 `cloud`。
+## 📡 接口调用文档 (API Reference)
+
+前端开发人员或 Dashboard 协作者可以直接调用以下 `http://127.0.0.1:8000` 暴露的 JSON 接口。
+
+### 1. 全局基础接口
+
+- **GET** **`/`**：返回服务状态、欢迎信息及可用端点列表。
+- **GET** **`/map_config`**：获取前端地图渲染所需的配置（中心坐标、警示颜色阈值等）。
+
+### 2. 道路交通拥堵预测 (Road Traffic)
+
+后台每 5 分钟更新一次。
+
+- **GET** **`/predictions`**：批量获取全港数千个干道 `segment_id` 的未来阻塞时长（分钟）。适合地图全局染色。
+- **GET** **`/predict?segment_id=105500`**：获取特定路段的详细预测时长。适合点击路段时弹出的信息气泡。
+
+### 3. 港铁延误预警 (MTR Delay)
+
+后台每 15 秒更新一次。
+
+- **GET** **`/mtr/predictions`**：批量获取 10 条线路 100+ 站点的初级任务结果：**延误风险概率** (0\~1)。
+- **GET** **`/mtr/delay-prediction`**：批量获取全量站点的**高级系统级预测**。
+  - 回传 JSON 中包含了：`delay_risk_probability` (风险)、`delay_duration_minutes` (预计持续分钟)、`affected_trains_count` (预计受影响车次) 以及用于前端渲染的 `color_code` (绿/黄/红)。
+- **单一站点查询示例**：`GET /mtr/delay-prediction?line=TCL&sta=OLY`
+
+> **前端轮询对接建议 (JavaScript)**：
+> 前端无需关心数据拉取和推理逻辑，只需使用 `setInterval` 定时（如道路 5 分钟，MTR 15 秒）对 `/predictions` 和 `/mtr/delay-prediction` 发起 `fetch()` 请求，即可始终获取内存中最新的预测状态并实时更新仪表板。
+
+***
+
+## ☁️ 云端部署简述
+
+本项目完全支持平滑迁移至 AWS / 阿里云等云端环境。
+只需修改环境变量 `ENV=cloud`，系统会自动读取 `config/cloud.yaml` 中的配置，并连接到分布式的 Spark Master 节点。
+更详细的 Docker 容器化构建、S3 模型挂载与 Spark RDD 集群适配指南，请参阅 [cloud\_migration\_guide.md](cloud_migration_guide.md)。

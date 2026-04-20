@@ -3,39 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hong Kong Traffic Prediction Map</title>
+    <title>Hong Kong Traffic & MTR Prediction System</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="/frontend/styles.css">
 </head>
 <body>
+    <!-- Top-right System Switcher -->
+    <div class="system-switcher">
+        <button id="btn-road" class="active">Road Traffic System</button>
+        <button id="btn-mtr">MTR Delay System</button>
+    </div>
+
+    <!-- Sidebar Dashboard -->
     <div class="sidebar">
-        <h2>HK Traffic Predictor</h2>
+        <h2 id="dashboard-title">HK Road Traffic</h2>
+        
         <div class="status-panel">
             <p>Last Update: <span id="last-update">Loading...</span></p>
             <button id="refresh-btn">Refresh Now</button>
         </div>
         
-        <div class="legend">
-            <h3>Congestion Prediction</h3>
-            <div class="legend-item"><span class="color-box" style="background-color: #28a745;"></span> Clear (0 min)</div>
-            <div class="legend-item"><span class="color-box" style="background-color: #ffc107;"></span> Slow (< 5 mins)</div>
-            <div class="legend-item"><span class="color-box" style="background-color: #fd7e14;"></span> Congested (5-20 mins)</div>
-            <div class="legend-item"><span class="color-box" style="background-color: #dc3545;"></span> Heavy (> 20 mins)</div>
-            <div class="legend-item"><span class="color-box" style="background-color: #6c757d;"></span> No Data</div>
+        <!-- Legend (Dynamic) -->
+        <div class="legend" id="legend-panel">
+            <!-- Filled by JS based on active system -->
         </div>
 
+        <!-- Details Panel (Interactive) -->
         <div class="details-panel" id="details-panel">
-            <h3>Segment Details</h3>
-            <p class="placeholder-text">Click a road segment on the map to see details.</p>
+            <h3>Interactive Details</h3>
+            <p class="placeholder-text" id="details-placeholder">Click an element on the map to see details.</p>
+            
+            <!-- Road Content -->
             <div id="segment-info" style="display: none;">
                 <p><strong>Segment ID:</strong> <span id="seg-id"></span></p>
                 <p><strong>Street:</strong> <span id="seg-street"></span></p>
                 <p><strong>Predicted Congestion:</strong> <span id="seg-pred"></span> mins</p>
             </div>
+            
+            <!-- MTR Content -->
+            <div id="mtr-info" style="display: none;">
+                <p><strong>Line:</strong> <span id="mtr-line"></span></p>
+                <p><strong>Station:</strong> <span id="mtr-sta"></span></p>
+                <p><strong>Next Train (UP):</strong> <span id="mtr-up"></span> mins</p>
+                <p><strong>Next Train (DOWN):</strong> <span id="mtr-down"></span> mins</p>
+                <p><strong>Delay Risk:</strong> <span id="mtr-risk"></span></p>
+                <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ccc;">
+                <h4>System Impact</h4>
+                <p><strong>Est. Duration:</strong> <span id="mtr-duration"></span> mins</p>
+                <p><strong>Affected Trains:</strong> <span id="mtr-affected"></span></p>
+            </div>
+        </div>
+
+        <!-- MTR Global Events Panel (Only visible in MTR mode) -->
+        <div class="events-panel" id="events-panel" style="display: none;">
+            <h3>Active Delay Events</h3>
+            <p id="events-summary" style="font-weight: bold; color: #dc3545;">Detecting...</p>
+            <ul id="events-list" class="events-list">
+                <!-- Filled by JS -->
+            </ul>
         </div>
     </div>
 
+    <!-- Map Container -->
     <div id="map"></div>
 
     <!-- Leaflet JS -->

@@ -1,0 +1,2520 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "type": "LineString",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.15597060143382,
+            22.285147266181355
+          ],
+          [
+            114.1601470391781,
+            22.302694845171867
+          ],
+          [
+            114.10420806969962,
+            22.357894198275016
+          ],
+          [
+            113.93,
+            22.314896809004665
+          ],
+          [
+            113.93417643774428,
+            22.320358647527428
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "type": "LineString",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.15597060143382,
+            22.285147266181355
+          ],
+          [
+            114.1601470391781,
+            22.302694845171867
+          ],
+          [
+            114.15818537130095,
+            22.316117005387945
+          ],
+          [
+            114.15135120044668,
+            22.326401517761305
+          ],
+          [
+            114.12464731835175,
+            22.347435372132615
+          ],
+          [
+            114.10420806969962,
+            22.357894198275016
+          ],
+          [
+            114.0245393634841,
+            22.33000399522862
+          ],
+          [
+            113.93474595198214,
+            22.287936286485994
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "type": "LineString",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.24336841951728,
+            22.429645071447087
+          ],
+          [
+            114.2315984586016,
+            22.42615879606629
+          ],
+          [
+            114.2251439639059,
+            22.418190165104566
+          ],
+          [
+            114.22292015633724,
+            22.409374871824333
+          ],
+          [
+            114.20803142366563,
+            22.388805847077617
+          ],
+          [
+            114.2019566051285,
+            22.38253055139218
+          ],
+          [
+            114.19474275811567,
+            22.37660388324482
+          ],
+          [
+            114.18525085415139,
+            22.37381486294018
+          ],
+          [
+            114.17499959786998,
+            22.37102584263554
+          ],
+          [
+            114.20058255006586,
+            22.340056103428946
+          ],
+          [
+            114.18261119644446,
+            22.308272885781147
+          ],
+          [
+            114.18128232988947,
+            22.302346217633787
+          ],
+          [
+            114.17324586664878,
+            22.29432778425795
+          ],
+          [
+            114.1652726673188,
+            22.303566414017066
+          ],
+          [
+            114.15135120044668,
+            22.326401517761305
+          ],
+          [
+            114.13413922231601,
+            22.33674414181719
+          ],
+          [
+            114.1070556408889,
+            22.367132828034133
+          ],
+          [
+            114.06003908431045,
+            22.43482468210417
+          ],
+          [
+            114.03042434394193,
+            22.446561805673106
+          ],
+          [
+            114.02112227805695,
+            22.44824684232025
+          ],
+          [
+            114.00075536577747,
+            22.45058763025858
+          ],
+          [
+            113.9727768491301,
+            22.41222199317223
+          ],
+          [
+            113.96727154483082,
+            22.395545983026917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "type": "LineString",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.20058255006586,
+            22.290725306790634
+          ],
+          [
+            114.20874558747514,
+            22.287703861034426
+          ],
+          [
+            114.23595569672364,
+            22.296477661168954
+          ],
+          [
+            114.2531044109436,
+            22.30257864308535
+          ],
+          [
+            114.2609510592786,
+            22.307633742387512
+          ],
+          [
+            114.27,
+            22.292584646567548
+          ],
+          [
+            114.26322911623002,
+            22.31460629314911
+          ],
+          [
+            114.2582933261686,
+            22.318731711923544
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "type": "LineString",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.16318444844666,
+            22.278523342957833
+          ],
+          [
+            114.18128232988947,
+            22.302346217633787
+          ],
+          [
+            114.17160058784592,
+            22.320416737931417
+          ],
+          [
+            114.17438489512449,
+            22.335872572971986
+          ],
+          [
+            114.17499959786998,
+            22.37102584263554
+          ],
+          [
+            114.18487117799283,
+            22.381833296316017
+          ],
+          [
+            114.19474275811567,
+            22.396276432619644
+          ],
+          [
+            114.2006277385735,
+            22.398542511617162
+          ],
+          [
+            114.20805853677022,
+            22.41535134238581
+          ],
+          [
+            114.16857221627887,
+            22.445233705832454
+          ],
+          [
+            114.15870063615604,
+            22.45225605900817
+          ],
+          [
+            114.13407593523172,
+            22.496083518658377
+          ],
+          [
+            114.12493659432144,
+            22.503852934644005
+          ],
+          [
+            114.11200046865186,
+            22.53
+          ],
+          [
+            114.06681901736874,
+            22.516453331088815
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "SIL",
+        "type": "LineString",
+        "color": "#B1CA27"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.16318444844666,
+            22.278523342957833
+          ],
+          [
+            114.17286619049021,
+            22.24592666814736
+          ],
+          [
+            114.1652726673188,
+            22.245229413071197
+          ],
+          [
+            114.15426205872025,
+            22.24
+          ],
+          [
+            114.14742788786597,
+            22.24034862753808
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "type": "LineString",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.15691979183025,
+            22.280615108186314
+          ],
+          [
+            114.16318444844666,
+            22.278523342957833
+          ],
+          [
+            114.17096780969736,
+            22.295722294410268
+          ],
+          [
+            114.17014517029592,
+            22.303043472709945
+          ],
+          [
+            114.16793040042879,
+            22.311759161161945
+          ],
+          [
+            114.16685463586379,
+            22.317569627222788
+          ],
+          [
+            114.16571560738807,
+            22.323321981601108
+          ],
+          [
+            114.16217197096594,
+            22.329887793142102
+          ],
+          [
+            114.15641354150308,
+            22.334478062819667
+          ],
+          [
+            114.14622557230598,
+            22.336337402596584
+          ],
+          [
+            114.13413922231601,
+            22.33674414181719
+          ],
+          [
+            114.12464731835175,
+            22.347435372132615
+          ],
+          [
+            114.1252168325896,
+            22.355453805508454
+          ],
+          [
+            114.12857063093244,
+            22.36231015418354
+          ],
+          [
+            114.12211613623674,
+            22.370154273790337
+          ],
+          [
+            114.1147757382289,
+            22.373059496181494
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "type": "LineString",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.12490042034173,
+            22.280440794417274
+          ],
+          [
+            114.13287361967171,
+            22.283229814721913
+          ],
+          [
+            114.14015075376885,
+            22.284640922132517
+          ],
+          [
+            114.14806066601453,
+            22.285670207488472
+          ],
+          [
+            114.15691979183025,
+            22.280615108186314
+          ],
+          [
+            114.16318444844666,
+            22.278523342957833
+          ],
+          [
+            114.1716638749302,
+            22.276257263960314
+          ],
+          [
+            114.18305415968733,
+            22.278871970495914
+          ],
+          [
+            114.19033129378445,
+            22.280440794417274
+          ],
+          [
+            114.19336870305303,
+            22.287064717640792
+          ],
+          [
+            114.20058255006586,
+            22.290725306790634
+          ],
+          [
+            114.20874558747514,
+            22.287703861034426
+          ],
+          [
+            114.21425089177441,
+            22.28317170303939
+          ],
+          [
+            114.22108506262867,
+            22.280905624041868
+          ],
+          [
+            114.22753955732438,
+            22.277651774112634
+          ],
+          [
+            114.23949935631936,
+            22.275037067577035
+          ],
+          [
+            114.23684162320936,
+            22.262660789975197
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "type": "LineString",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.18874930206589,
+            22.303566414017066
+          ],
+          [
+            114.18261119644446,
+            22.308272885781147
+          ],
+          [
+            114.16793040042879,
+            22.311759161161945
+          ],
+          [
+            114.16685463586379,
+            22.317569627222788
+          ],
+          [
+            114.16571560738807,
+            22.323321981601108
+          ],
+          [
+            114.16717104811165,
+            22.330643159900788
+          ],
+          [
+            114.17438489512449,
+            22.335872572971986
+          ],
+          [
+            114.18564860571303,
+            22.337964338200468
+          ],
+          [
+            114.19216638749302,
+            22.341450613581266
+          ],
+          [
+            114.20058255006586,
+            22.340056103428946
+          ],
+          [
+            114.20773310999441,
+            22.336221200510067
+          ],
+          [
+            114.2130485762144,
+            22.32227609898687
+          ],
+          [
+            114.21792107919153,
+            22.314548181466584
+          ],
+          [
+            114.22589427852151,
+            22.31065516686518
+          ],
+          [
+            114.23215893513793,
+            22.30571629092807
+          ],
+          [
+            114.23595569672364,
+            22.296477661168954
+          ],
+          [
+            114.2531044109436,
+            22.30257864308535
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "DRL",
+        "type": "LineString",
+        "color": "#E6005C"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.0245393634841,
+            22.33000399522862
+          ],
+          [
+            114.04105527638191,
+            22.313850926390426
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TUM",
+        "name": "TML-TUM",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.96727154483082,
+          22.395545983026917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "SIH",
+        "name": "TML-SIH",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.9727768491301,
+          22.41222199317223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TIS",
+        "name": "TML-TIS",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.00075536577747,
+          22.45058763025858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "LOP",
+        "name": "TML-LOP",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.02112227805695,
+          22.44824684232025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "YUL",
+        "name": "TML-YUL",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.03042434394193,
+          22.446561805673106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "KSR",
+        "name": "TML-KSR",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.06003908431045,
+          22.43482468210417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TWW",
+        "name": "TML-TWW",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1070556408889,
+          22.367132828034133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "MEF",
+        "name": "TML-MEF",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.13413922231601,
+          22.33674414181719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "NAC",
+        "name": "TCL-NAC",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15135120044668,
+          22.326401517761305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "AUS",
+        "name": "TML-AUS",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1652726673188,
+          22.303566414017066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "ETS",
+        "name": "TML-ETS",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17324586664878,
+          22.29432778425795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "HUH",
+        "name": "TML-HUH",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18128232988947,
+          22.302346217633787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "TSW",
+        "name": "TWL-TSW",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1147757382289,
+          22.373059496181494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "TWH",
+        "name": "TWL-TWH",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12211613623674,
+          22.370154273790337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "KWH",
+        "name": "TWL-KWH",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12857063093244,
+          22.36231015418354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "KWF",
+        "name": "TWL-KWF",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1252168325896,
+          22.355453805508454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "LAK",
+        "name": "TCL-LAK",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12464731835175,
+          22.347435372132615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "MEF",
+        "name": "TML-MEF",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.13565792695029,
+          22.33709276935527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "LCK",
+        "name": "TWL-LCK",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.14622557230598,
+          22.336337402596584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "CSW",
+        "name": "TWL-CSW",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15641354150308,
+          22.334478062819667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "SSP",
+        "name": "TWL-SSP",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16217197096594,
+          22.329887793142102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "PRE",
+        "name": "TWL-PRE",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16571560738807,
+          22.323321981601108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "MOK",
+        "name": "TWL-MOK",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16685463586379,
+          22.317569627222788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "YMT",
+        "name": "TWL-YMT",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16793040042879,
+          22.311759161161945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "JOR",
+        "name": "TWL-JOR",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17014517029592,
+          22.303043472709945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "TST",
+        "name": "TWL-TST",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17096780969736,
+          22.295722294410268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "ADM",
+        "name": "EAL-ADM",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16318444844666,
+          22.278523342957833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "CEN",
+        "name": "TWL-CEN",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15691979183025,
+          22.280615108186314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "LMC",
+        "name": "EAL-LMC",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.06681901736874,
+          22.516453331088815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "LOW",
+        "name": "EAL-LOW",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.11200046865186,
+          22.53
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "SHS",
+        "name": "EAL-SHS",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12493659432144,
+          22.503852934644005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "FAN",
+        "name": "EAL-FAN",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.13407593523172,
+          22.496083518658377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "TWO",
+        "name": "EAL-TWO",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15870063615604,
+          22.45225605900817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "TAP",
+        "name": "EAL-TAP",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16857221627887,
+          22.445233705832454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "UNI",
+        "name": "EAL-UNI",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20805853677022,
+          22.41535134238581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "FOT",
+        "name": "EAL-FOT",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19474275811567,
+          22.396276432619644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "RAC",
+        "name": "EAL-RAC",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2006277385735,
+          22.398542511617162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "SHT",
+        "name": "EAL-SHT",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18487117799283,
+          22.381833296316017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TAW",
+        "name": "TML-TAW",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17499959786998,
+          22.37102584263554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "KOT",
+        "name": "EAL-KOT",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17438489512449,
+          22.335872572971986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "MKK",
+        "name": "EAL-MKK",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17160058784592,
+          22.320416737931417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "HUH",
+        "name": "TML-HUH",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17995346333447,
+          22.302346217633787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "KET",
+        "name": "ISL-KET",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12490042034173,
+          22.280440794417274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "HKU",
+        "name": "ISL-HKU",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.13287361967171,
+          22.283229814721913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "SYP",
+        "name": "ISL-SYP",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.14015075376885,
+          22.284640922132517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "SHW",
+        "name": "ISL-SHW",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.14806066601453,
+          22.285670207488472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "CEN",
+        "name": "TWL-CEN",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15597060143382,
+          22.279569225572075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "ADM",
+        "name": "EAL-ADM",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16299461036738,
+          22.277651774112634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "WAC",
+        "name": "ISL-WAC",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1716638749302,
+          22.276257263960314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "CAB",
+        "name": "ISL-CAB",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18305415968733,
+          22.278871970495914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "TIH",
+        "name": "ISL-TIH",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19033129378445,
+          22.280440794417274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "FOH",
+        "name": "ISL-FOH",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19336870305303,
+          22.287064717640792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "NOP",
+        "name": "TKL-NOP",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20058255006586,
+          22.290725306790634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "QUB",
+        "name": "TKL-QUB",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20874558747514,
+          22.287703861034426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "TAK",
+        "name": "ISL-TAK",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.21425089177441,
+          22.28317170303939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "SWH",
+        "name": "ISL-SWH",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.22108506262867,
+          22.280905624041868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "SKW",
+        "name": "ISL-SKW",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.22753955732438,
+          22.277651774112634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "HFC",
+        "name": "ISL-HFC",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.23949935631936,
+          22.275037067577035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "ISL",
+        "sta": "CHW",
+        "name": "ISL-CHW",
+        "type": "Point",
+        "color": "#0071CE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.23684162320936,
+          22.262660789975197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "NOP",
+        "name": "TKL-NOP",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20058255006586,
+          22.289330796638314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "QUB",
+        "name": "TKL-QUB",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20836591131656,
+          22.286309350882107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "YAT",
+        "name": "TKL-YAT",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.23595569672364,
+          22.296477661168954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "TIK",
+        "name": "TKL-TIK",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2531044109436,
+          22.30257864308535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "TKO",
+        "name": "TKL-TKO",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2609510592786,
+          22.307633742387512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "LHP",
+        "name": "TKL-LHP",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.27,
+          22.292584646567548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "HAH",
+        "name": "TKL-HAH",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.26322911623002,
+          22.31460629314911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "POA",
+        "name": "TKL-POA",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2582933261686,
+          22.318731711923544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "TIK",
+        "name": "TKL-TIK",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.25196538246789,
+          22.30362452569959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TKL",
+        "sta": "YAT",
+        "name": "TKL-YAT",
+        "type": "Point",
+        "color": "#88509F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.23671504904077,
+          22.297523543783193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "LAT",
+        "name": "KTL-LAT",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.23215893513793,
+          22.30571629092807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "KWT",
+        "name": "KTL-KWT",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.22589427852151,
+          22.31065516686518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "NTK",
+        "name": "KTL-NTK",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.21792107919153,
+          22.314548181466584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "KOB",
+        "name": "KTL-KOB",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2130485762144,
+          22.32227609898687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "CHH",
+        "name": "KTL-CHH",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20773310999441,
+          22.336221200510067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "DIH",
+        "name": "TML-DIH",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20058255006586,
+          22.340056103428946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "WTS",
+        "name": "KTL-WTS",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19216638749302,
+          22.341450613581266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "LOF",
+        "name": "KTL-LOF",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18564860571303,
+          22.337964338200468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "KOT",
+        "name": "EAL-KOT",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17590359975877,
+          22.335872572971986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "SKM",
+        "name": "KTL-SKM",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16717104811165,
+          22.330643159900788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "PRE",
+        "name": "TWL-PRE",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16704447394306,
+          22.323321981601108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "MOK",
+        "name": "TWL-MOK",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16818350241877,
+          22.31774394099183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TWL",
+        "sta": "YMT",
+        "name": "TWL-YMT",
+        "type": "Point",
+        "color": "#E2231A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16944910506308,
+          22.311759161161945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "HOM",
+        "name": "TML-HOM",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18261119644446,
+          22.308272885781147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "KTL",
+        "sta": "WHA",
+        "name": "KTL-WHA",
+        "type": "Point",
+        "color": "#00AB4E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18874930206589,
+          22.303566414017066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "EAL",
+        "sta": "ADM",
+        "name": "EAL-ADM",
+        "type": "Point",
+        "color": "#5DB7DE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16280477228808,
+          22.276780205267436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "SIL",
+        "sta": "OCP",
+        "name": "SIL-OCP",
+        "type": "Point",
+        "color": "#B1CA27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17286619049021,
+          22.24592666814736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "SIL",
+        "sta": "WCH",
+        "name": "SIL-WCH",
+        "type": "Point",
+        "color": "#B1CA27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1652726673188,
+          22.245229413071197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "SIL",
+        "sta": "LET",
+        "name": "SIL-LET",
+        "type": "Point",
+        "color": "#B1CA27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15426205872025,
+          22.24
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "SIL",
+        "sta": "SCH",
+        "name": "SIL-SCH",
+        "type": "Point",
+        "color": "#B1CA27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.14742788786597,
+          22.24034862753808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TAW",
+        "name": "TML-TAW",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1761386263457,
+          22.370154273790337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "CKT",
+        "name": "TML-CKT",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18525085415139,
+          22.37381486294018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "STW",
+        "name": "TML-STW",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19474275811567,
+          22.37660388324482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "CIO",
+        "name": "TML-CIO",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2019566051285,
+          22.38253055139218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "SHM",
+        "name": "TML-SHM",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.20803142366563,
+          22.388805847077617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "TSH",
+        "name": "TML-TSH",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.22292015633724,
+          22.409374871824333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "HEO",
+        "name": "TML-HEO",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2251439639059,
+          22.418190165104566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "MOS",
+        "name": "TML-MOS",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2315984586016,
+          22.42615879606629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TML",
+        "sta": "WKS",
+        "name": "TML-WKS",
+        "type": "Point",
+        "color": "#995025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.24336841951728,
+          22.429645071447087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "HOK",
+        "name": "AEL-HOK",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15597060143382,
+          22.285147266181355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "KOW",
+        "name": "AEL-KOW",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1601470391781,
+          22.302694845171867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "OLY",
+        "name": "TCL-OLY",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15818537130095,
+          22.316117005387945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "NAC",
+        "name": "TCL-NAC",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15097152428811,
+          22.325704262685143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "LAK",
+        "name": "TCL-LAK",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.12369812795532,
+          22.346912430825498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "TSY",
+        "name": "AEL-TSY",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.10420806969962,
+          22.357894198275016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "SUN",
+        "name": "TCL-SUN",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.0245393634841,
+          22.33000399522862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "TUC",
+        "name": "TCL-TUC",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.93474595198214,
+          22.287936286485994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "HOK",
+        "name": "AEL-HOK",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.15540108719597,
+          22.283927069798075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "KOW",
+        "name": "AEL-KOW",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1588181726231,
+          22.302869158940908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "TSY",
+        "name": "AEL-TSY",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.10401823162034,
+          22.356499688122696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "AIR",
+        "name": "AEL-AIR",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.93,
+          22.314896809004665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "AEL",
+        "sta": "AWE",
+        "name": "AEL-AWE",
+        "type": "Point",
+        "color": "#008784"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.93417643774428,
+          22.320358647527428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "TCL",
+        "sta": "SUN",
+        "name": "TCL-SUN",
+        "type": "Point",
+        "color": "#F8912E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.02510887772195,
+          22.329481053921498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "DRL",
+        "sta": "DIS",
+        "name": "DRL-DIS",
+        "type": "Point",
+        "color": "#E6005C"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.04105527638191,
+          22.313850926390426
+        ]
+      }
+    }
+  ]
+}
