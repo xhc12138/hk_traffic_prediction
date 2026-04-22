@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTR Schematic Monitor</title>
+    <link rel="stylesheet" href="/frontend/mtr_schematic.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="panel hero-panel">
+            <div class="hero-copy">
+                <h1>MTR Schematic Monitor</h1>
+                <p>SVG schematic view powered by open-source line artwork and the current station prediction data.</p>
+            </div>
+            <div class="hero-actions">
+                <button id="refresh-btn" type="button">Refresh Now</button>
+                <a class="secondary-link" href="/map">Open Original Dashboard</a>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Status</h2>
+            <p class="meta-row">Prediction update: <span id="last-update">Loading...</span></p>
+            <p class="meta-row">Train positions are estimated from `ttnt` and station order, so the animation is indicative rather than exact.</p>
+        </div>
+
+        <div class="panel">
+            <h2>Legend</h2>
+            <div class="legend-item"><span class="legend-dot normal"></span> Normal operation</div>
+            <div class="legend-item"><span class="legend-dot minor"></span> Minor delay risk</div>
+            <div class="legend-item"><span class="legend-dot severe"></span> Severe delay risk</div>
+            <div class="legend-item"><span class="legend-train"></span> Estimated train position</div>
+        </div>
+
+        <div class="panel details-panel">
+            <h2>Station Details</h2>
+            <p id="details-placeholder" class="placeholder-text">Click a station node to inspect risk and estimated train activity.</p>
+            <div id="station-details" class="station-details hidden">
+                <p><strong>Line:</strong> <span id="detail-line"></span></p>
+                <p><strong>Station:</strong> <span id="detail-station"></span></p>
+                <p><strong>Next Train (UP):</strong> <span id="detail-up"></span> mins</p>
+                <p><strong>Next Train (DOWN):</strong> <span id="detail-down"></span> mins</p>
+                <p><strong>Delay Risk:</strong> <span id="detail-risk"></span></p>
+                <p><strong>Estimated Duration:</strong> <span id="detail-duration"></span> mins</p>
+                <p><strong>Affected Trains:</strong> <span id="detail-affected"></span></p>
+                <p><strong>Transfers:</strong> <span id="detail-transfers"></span></p>
+                <div class="related-trains">
+                    <h3>Estimated Nearby Trains</h3>
+                    <ul id="detail-trains"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel events-panel">
+            <h2>Active Delay Events</h2>
+            <p id="events-summary" class="summary-text">Detecting...</p>
+            <ul id="events-list" class="events-list"></ul>
+        </div>
+    </aside>
+
+    <main class="canvas-shell">
+        <div class="canvas-toolbar">
+            <div>
+                <h2>MTR Network Schematic</h2>
+                <p>Preserves the existing station risk and impact metrics in a dedicated SVG view.</p>
+            </div>
+        </div>
+        <div class="canvas-panel" id="canvas-panel">
+            <svg id="schematic-svg" aria-label="MTR schematic view"></svg>
+            <button id="line-back-btn" class="overlay-btn hidden" type="button">← Back to Network</button>
+            <div id="line-mode-header" class="line-mode-header hidden">
+                <h3 id="line-mode-title"></h3>
+                <p id="line-mode-subtitle"></p>
+            </div>
+            <div id="network-line-legend" class="network-line-legend"></div>
+            <div id="line-direction-toggle" class="line-direction-toggle hidden">
+                <button id="direction-forward-btn" type="button"></button>
+                <button id="direction-reverse-btn" type="button"></button>
+            </div>
+            <div id="hover-card" class="hover-card hidden"></div>
+            <div id="station-popup" class="station-popup hidden"></div>
+        </div>
+    </main>
+
+    <script src="/frontend/mtr_schematic.js"></script>
+</body>
+</html>

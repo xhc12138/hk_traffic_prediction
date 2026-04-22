@@ -1,0 +1,34 @@
+master: "local[*]"
+model_path: "data/models/best_model.pth"
+data_path: "data/processed/train_data.parquet"
+api_port: 8000
+api_host: "0.0.0.0"
+realtime_url: "https://resource.data.one.gov.hk/td/traffic-detectors/irnAvgSpeed-all.xml"
+prediction_interval_minutes: 5
+historical_data_dir: "data/historical"
+road_network_geojson_path: "data/road_network/processed/road_network.geojson"
+map_center: [22.3193, 114.1694]
+color_thresholds: [0, 5, 20]
+prediction_api_endpoint: "/predictions"
+
+# MTR Next Train Configuration
+mtr_api_base_url: "https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php"
+mtr_logger_interval_seconds: 30
+mtr_raw_data_dir: "data/historical/mtr_nexttrain/raw"
+mtr_model_risk_path: "data/models/mtr_delay_risk.pth"
+mtr_model_propagation_path: "data/models/mtr_delay_propagation.pth"
+delay_risk_thresholds: [0.3, 0.7]
+delay_propagation_config:
+  seq_len: 12
+  future_len: 30
+mtr_lines_stations:
+  AEL: ["HOK", "KOW", "TSY", "AIR", "AWE"]
+  TCL: ["HOK", "KOW", "OLY", "NAC", "LAK", "TSY", "SUN", "TUC"]
+  TML: ["WKS", "MOS", "HEO", "TSH", "SHM", "CIO", "STW", "CKT", "TAW", "HIK", "DIH", "KAT", "SUW", "TKW", "HOM", "HUH", "ETS", "AUS", "NAC", "MEF", "TWW", "KSR", "YUL", "LOP", "TIS", "SIH", "TUM"]
+  TKL: ["NOP", "QUB", "YAT", "TIK", "TKO", "LHP", "HAH", "POA"]
+  EAL: ["ADM", "EXC", "HUH", "MKK", "KOT", "TAW", "SHT", "FOT", "RAC", "UNI", "TAP", "TWO", "FAN", "SHS", "LOW", "LMC"]
+  SIL: ["ADM", "OCP", "WCH", "LET", "SCH"]
+  TWL: ["CEN", "ADM", "TST", "JOR", "YMT", "MOK", "PRE", "SSP", "CSW", "LCK", "MEF", "LAK", "KWF", "KWH", "TWH", "TSW"]
+  ISL: ["KET", "HKU", "SYP", "SHW", "CEN", "ADM", "WAC", "CAB", "TIH", "FOH", "NOP", "QUB", "TAK", "SWH", "SKW", "HFC", "CHW"]
+  KTL: ["WHA", "HOM", "YMT", "MOK", "PRE", "SKM", "KOT", "LOF", "WTS", "DIH", "CHH", "KOB", "NTK", "KWT", "LAT", "YAT", "TIK"]
+  DRL: ["SUN", "DIS"]

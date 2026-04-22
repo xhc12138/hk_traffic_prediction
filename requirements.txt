@@ -1,0 +1,16 @@
+pyspark
+torch
+fastapi
+uvicorn
+pandas
+lxml
+pyarrow
+fastparquet
+pyyaml
+apscheduler
+requests
+geopandas
+fiona
+pyogrio
+shapely
+aiohttp

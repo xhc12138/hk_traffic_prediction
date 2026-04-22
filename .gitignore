@@ -1,0 +1,3 @@
+# Project specific data files
+# We ignore the raw/processed data and models as they are large and constantly updated
+data/historical/mtr_nexttrain/
