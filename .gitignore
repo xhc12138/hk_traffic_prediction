@@ -1,3 +1,7 @@
 # Project specific data files
 # We ignore the raw/processed data and models as they are large and constantly updated
 data/historical/mtr_nexttrain/
+# 超大文件（1.4GB+），不纳入 Git 版本控制
+data/historical/bus/FB_ROUTE.gdb_converted.geojson
+data/historical/bus/STOP_BUS.gdb_converted.geojson
+data/historical/bus/*.geojson
