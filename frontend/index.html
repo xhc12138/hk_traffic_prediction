@@ -11,8 +11,9 @@
 <body>
     <!-- Top-right System Switcher -->
     <div class="system-switcher">
-        <button id="btn-road" class="active">Road Traffic System</button>
-        <button id="btn-mtr">MTR Delay System</button>
+        <button id="btn-road" class="active">Road Traffic</button>
+        <button id="btn-mtr">MTR Delay</button>
+        <button id="btn-bus">Bus Network</button>
     </div>
 
     <!-- Sidebar Dashboard -->
@@ -53,6 +54,14 @@
                 <p><strong>Est. Duration:</strong> <span id="mtr-duration"></span> mins</p>
                 <p><strong>Affected Trains:</strong> <span id="mtr-affected"></span></p>
             </div>
+
+            <!-- Bus Content -->
+            <div id="bus-info" style="display: none;">
+                <p><strong>Route:</strong> <span id="bus-route"></span> (<span id="bus-bound"></span>)</p>
+                <p><strong>Stops Count:</strong> <span id="bus-stops"></span></p>
+                <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ccc;">
+                <p style="font-size: 12px; color: #666;">Data generated via Spark RDD (KMB JSON joins).</p>
+            </div>
         </div>
 
         <!-- MTR Global Events Panel (Only visible in MTR mode) -->
@@ -62,6 +71,14 @@
             <ul id="events-list" class="events-list">
                 <!-- Filled by JS -->
             </ul>
+        </div>
+
+        <!-- Bus Routes List Panel (Only visible in Bus mode) -->
+        <div class="bus-list-panel" id="bus-list-panel" style="display: none;">
+            <h3>Bus Routes</h3>
+            <div id="bus-routes-container" class="bus-routes-container">
+                <!-- Filled by JS -->
+            </div>
         </div>
     </div>
 

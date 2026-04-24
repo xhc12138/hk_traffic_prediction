@@ -20,6 +20,7 @@ from src.inference.predictor import predictor
 
 from src.mtr.inference.spark_etl_mtr import run_spark_etl_mtr
 from src.mtr.inference.predictor_mtr import mtr_predictor
+from src.bus.inference.spark_etl_bus import run_bus_etl
 
 import glob
 
@@ -32,6 +33,45 @@ spark_session = None
 latest_mtr_risk: Dict[str, float] = {}
 latest_mtr_propagation: Dict[str, dict] = {}
 mtr_last_update_timestamp: str = ""
+
+# BUS Global cache
+latest_bus_data: Dict[str, list] = {}
+bus_last_update_timestamp: str = ""
+
+# Prefetch cache for specific routes to reduce latency for demonstration
+prefetched_bus_eta: Dict[str, dict] = {}
+
+def update_bus_data():
+    global latest_bus_data, bus_last_update_timestamp, spark_session
+    print("[BUS] Running background task to update Bus data...")
+    if spark_session is None:
+        spark_session = create_spark_session()
+        
+    # We only process KMB periodically for UI demonstration to avoid 1.5GB GOV file OOM
+    res = run_bus_etl(spark_session, task="kmb")
+    if res and "kmb" in res:
+        latest_bus_data["kmb"] = res["kmb"]
+        bus_last_update_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"[BUS] Background update complete. Cached {len(res['kmb'])} routes.")
+
+def update_prefetched_bus_eta():
+    """Periodically fetch ETA for demonstration routes to avoid frontend loading delay."""
+    import requests
+    routes_to_prefetch = ["1", "10"]
+    for route in routes_to_prefetch:
+        # Use data.etabus.gov.hk according to official spec
+        # Ensure route doesn't have leading zeros and is uppercase
+        clean_route = route.lstrip('0').upper() if route.isdigit() else route.upper()
+        url = f"https://data.etabus.gov.hk/v1/transport/kmb/route-eta/{clean_route}/1"
+        try:
+            resp = requests.get(url, timeout=5)
+            if resp.status_code == 200:
+                prefetched_bus_eta[route] = resp.json()
+                print(f"[BUS] Prefetched ETA for route {route}")
+            else:
+                print(f"[BUS] Failed to prefetch ETA for route {route}: Status {resp.status_code}")
+        except Exception as e:
+            print(f"[BUS] Failed to prefetch ETA for route {route}: {e}")
 
 def update_mtr_predictions():
     global latest_mtr_risk, latest_mtr_propagation, mtr_last_update_timestamp, spark_session
@@ -113,11 +153,17 @@ async def lifespan(app: FastAPI):
     interval = config.get('prediction_interval_minutes', 5)
     scheduler.add_job(update_predictions, 'interval', minutes=interval)
     scheduler.add_job(update_mtr_predictions, 'interval', seconds=15)
+    # Bus data is relatively static, update every hour or just once
+    scheduler.add_job(update_bus_data, 'interval', minutes=60)
+    # Prefetch bus ETA every 30 seconds
+    scheduler.add_job(update_prefetched_bus_eta, 'interval', seconds=30)
     scheduler.start()
     
     # Run once immediately
     update_predictions()
     update_mtr_predictions()
+    update_bus_data()
+    update_prefetched_bus_eta()
     yield
     
     # Shutdown
@@ -190,6 +236,44 @@ def get_mtr_propagation_predictions(line: Optional[str] = None, sta: Optional[st
         "last_update": mtr_last_update_timestamp,
         "predictions": latest_mtr_propagation
     }
+
+# --- BUS Endpoints ---
+
+@app.get("/bus/routes")
+def get_bus_routes(limit: int = 100):
+    """Return aggregated KMB bus routes and stops (default limit to 100 to avoid huge JSONs)"""
+    data = latest_bus_data.get("kmb", [])
+    return {
+        "count": len(data),
+        "last_update": bus_last_update_timestamp,
+        "routes": data[:limit] if limit > 0 else data
+    }
+
+@app.get("/bus/eta/{route}")
+async def get_bus_eta(route: str):
+    """Fetch real-time ETA for a specific KMB route. Uses cache for '1' and '10'."""
+    # Serve from cache for demonstration routes
+    if route in ["1", "10"] and route in prefetched_bus_eta:
+        return prefetched_bus_eta[route]
+
+    import aiohttp
+    # Ensure route doesn't have leading zeros and is uppercase for KMB API
+    clean_route = route.lstrip('0').upper() if route.isdigit() else route.upper()
+    
+    # The API endpoint: https://data.etabus.gov.hk/v1/transport/kmb/route-eta/{route}/{service_type}
+    # Usually service_type is 1. We fetch service_type 1.
+    url = f"https://data.etabus.gov.hk/v1/transport/kmb/route-eta/{clean_route}/1"
+    
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, timeout=5) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    return data
+                else:
+                    return {"status": "Error", "message": f"KMB API returned {response.status}"}
+    except Exception as e:
+        return {"status": "Error", "message": str(e)}
 
 @app.get("/map_config")
 def get_map_config():
