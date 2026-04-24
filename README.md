@@ -1,3 +1,5 @@
+<br />
+
 # 香港交通预测与港铁延误预警系统
 
 本项目是一个基于 Spark RDD (大数据实时提取) 与 PyTorch (深度学习推理) 构建的**香港交通拥堵预测与 MTR 延误预警后端服务**，专为提供高性能、高并发的 RESTful JSON 接口给前端 Web/Dashboard 团队对接而设计。
@@ -9,6 +11,14 @@
 
 ***
 
+# 特别注意：巴士部分数据准备
+
+去以下两个网站下载geojson格式文件解压后放入data/historical/bus目录（解压后把文件拿出来放到此目录）
+
+<https://portal.csdi.gov.hk/geoportal/?lang=zh-hk&datasetId=td_rcd_1638874475129_49745>
+
+<https://portal.csdi.gov.hk/geoportal/?lang=zh-hk&datasetId=td_rcd_1638844988873_41214>
+
 ## 📚 项目技术文档索引
 
 为了让协作者更好地理解系统架构，本项目附带了详尽的设计文档：
@@ -16,8 +26,9 @@
 - [项目文件架构与各文件作用详解 (project\_structure.md)](project_structure.md)
 - [道路交通预测功能详解 (road\_traffic\_prediction.md)](road_traffic_prediction.md)
 - [港铁延误预测功能详解 (mtr\_delay\_prediction.md)](mtr_delay_prediction.md)
+- [专营巴士线网监控与实时预报功能详解 (bus\_network\_module.md)](bus_network_module.md) <-- 就是这里！
 - [云端迁移与集群部署指导文档 (cloud\_migration\_guide.md)](cloud_migration_guide.md)
-- 项目综合介绍文档（ppt和报告的大纲）project\_presentation\_guide.md
+- [项目综合介绍文档（PPT 和汇报大纲）(project\_presentation\_guide.md)](project_presentation_guide.md)
 
 ***
 
