@@ -7,11 +7,13 @@ conda activate hk_traffic || echo "Please activate hk_traffic environment manual
 
 export ENV=local
 export MTR_USE_MOCK=true
+export DEMO_MODE=false
 
 # Parse arguments for mock mode
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --real) export MTR_USE_MOCK=false ;;
+        --demo) export DEMO_MODE=true ;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
@@ -21,6 +23,7 @@ echo "================================================="
 echo "Starting Traffic Prediction API"
 echo "Environment: $ENV"
 echo "MTR Mock Mode: $MTR_USE_MOCK"
+echo "Demo Mode: $DEMO_MODE"
 echo "================================================="
 
 # Start the server
